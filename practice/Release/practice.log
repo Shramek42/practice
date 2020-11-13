@@ -1,0 +1,12 @@
+﻿  main.cpp
+  src.cpp
+C:\Макс\practice\src\src.cpp(80,10): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Макс\practice\src\src.cpp(92,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Макс\practice\src\src.cpp(93,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Макс\practice\src\src.cpp(133,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Макс\practice\src\src.cpp(134,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 268 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  practice.vcxproj -> C:\Макс\practice\Release\practice.exe

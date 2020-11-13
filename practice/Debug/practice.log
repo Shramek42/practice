@@ -1,0 +1,5 @@
+﻿  src.cpp
+C:\Макс\src\src.cpp(82,10): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Макс\src\src.cpp(157,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Макс\src\src.cpp(158,27): warning C4018: <: несоответствие типов со знаком и без знака
+  practice.vcxproj -> C:\Макс\practice\Debug\practice.exe
