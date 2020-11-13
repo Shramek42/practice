@@ -41,24 +41,6 @@ vector<int> nextv(int n, int k, vector<int> a) {
     }
     return ans;
 }
-vector<int> backv(int n, int k) {
-    vector<int> a(n, 0);
-    for(int i = n - 1; i >= n - k; i--) {
-        a[i] = 1;
-    }
-    return a;
-}
-vector<int> int_to_v(int n, int a) {
-    vector<int> col(n, 0);
-    int p = 1;
-    int count = 0;
-    while(count < n) {
-        if(a & p) col[count] = 1;
-        count++;
-        p <<= 1;
-    }
-    return col;
-}
 vector<vector<int>> start_matrix(int n, int k) {
     vector<vector<int>> matrix(n, vector<int>(n));
     for(int i = 0; i < k; i++) {
@@ -85,10 +67,9 @@ void nextm(int n, int k, vector<vector<int>>& a) {
     a[n - 1] = nextv(size(a), k, a[n - 1]);
     return;
 }
-double determinant(vector<vector<int>> m) {
+double determinant(vector<vector<int>> m, vector<vector<double>>& matrix) {
     const double EPS = 1E-9;
     int n = size(m);
-    vector<vector<double>> matrix(n, vector<double>(n));
     for (int i = 0; i < size(m); i++) {
         for (int j = 0; j < size(m); j++) {
             matrix[i][j] = (double)m[i][j];
@@ -140,19 +121,23 @@ void print(vector<vector<int>> a) {
 }
 double max_det(int& n, int& k, vector<vector<int>>& ans) {
     vector<vector<int>> matrix(n, vector<int>(n));
+    vector<vector<double>> m(n, vector<double>(n));
     matrix = start_matrix(n, k);
     int c = C_n_k(C_n_k(n,k), n);
-    double max_d = determinant(matrix);
+    double det_cur;
+    double max_d = determinant(matrix, m);
     ans = matrix;
     for(int i = 1; i < c; i++) {
-        if (abs(determinant(matrix)) > max_d) {
-            max_d = abs(determinant(matrix));
+        det_cur = abs(determinant(matrix, m));
+        if (det_cur > max_d) {
+            max_d = det_cur;
             ans = matrix;
         }       
         nextm(n, k, matrix);
     }
-    if (abs(determinant(matrix)) > max_d) {
-        max_d = abs(determinant(matrix));
+    det_cur = abs(determinant(matrix, m));
+    if (det_cur > max_d) {
+        max_d = det_cur;
         ans = matrix;
     }
     return max_d;

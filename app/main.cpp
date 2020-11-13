@@ -11,6 +11,7 @@ int main() {
         cout << "Enter k" << endl;
         cin >> k;
         cout << endl;
+        vector<vector<double>> matrix(n, vector<double>(n));
         if (n == k) {
             det = 1;
         }
@@ -19,7 +20,7 @@ int main() {
             print(ans);
         }
         cout << endl;
-        cout << determinant(ans) << endl;
+        cout << determinant(ans, matrix) << endl;
         cout << "Det = " << abs(det) << endl;
         cout << endl;
     }
