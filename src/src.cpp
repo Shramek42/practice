@@ -120,6 +120,9 @@ void print(vector<vector<int>> a) {
     }
 }
 double max_det(int& n, int& k, vector<vector<int>>& ans) {
+    if (n == k) {
+        return 1;
+    }
     vector<vector<int>> matrix(n, vector<int>(n));
     vector<vector<double>> m(n, vector<double>(n));
     matrix = start_matrix(n, k);
